@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="tertiary" >
+    <ion-title color="dark">
+      Crear Tareitas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="success"  [fullscreen]="true">
+  <form (ngSubmit)="anadirTarea()" autocomplete="off">
+    <ion-item>
+        <ion-label position="floating">Titulo</ion-label>
+        <ion-input  [(ngModel)]="tareita.titulo"  placeholder="Introduzca el titulo de su tareita" type="text" name="titulo" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="floating">Descripción</ion-label>
+        <ion-input [(ngModel)]="tareita.texto"  placeholder="Introduzca una breve descripción de su tareita" name="texto" type="text" ></ion-input>
+    </ion-item>
+
+  <ion-item>
+    <ion-label>Tiempo para realizar la tareita</ion-label>
+    <ion-select [(ngModel)]="tareita.duracion"  name="duracion">
+        <ion-select-option value="30 minutos">30 Minutos </ion-select-option>
+        <ion-select-option value="1 hora">1 Hora</ion-select-option>
+        <ion-select-option value="2 horas">2 Horas </ion-select-option>
+    </ion-select>
+  </ion-item>
+    <ion-button class="ion-margin-top" type="submit" expand="block" color="tertiary">Crear Tareita</ion-button>
+</form>
+<img src="../../assets/img/tarea.png">
+</ion-content>

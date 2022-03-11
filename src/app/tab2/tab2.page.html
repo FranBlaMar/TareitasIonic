@@ -1,0 +1,28 @@
+<ion-header  [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-title color="dark">
+      Lista de Tareitas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="success" class="cuerpo" [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Lista de Tareitas </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-item *ngFor="let tareita of tareas" >
+        <ion-label [routerLink]="['/tabs/tab4/', tareita.id]">
+            <ion-text color="dark">
+                <h2><b>{{ tareita.titulo }}</b></h2>
+            </ion-text>
+                <p>{{tareita.texto}}</p>
+                <p> {{tareita.duracion}}</p>
+        </ion-label>
+    </ion-item>
+</ion-list>
+
+</ion-content>

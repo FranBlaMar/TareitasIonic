@@ -1,0 +1,7 @@
+{
+  "name": "fireTask",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,34 @@
+<ion-header  [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-title color="dark">
+      Detalles de tareita
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="success" class="cuerpo" [fullscreen]="true" *ngIf="carga">
+
+  <ion-card>
+    <ion-card-header>
+      <img src="../../assets/img/task.png">
+      <ion-card-title style="align-items: center;">{{tareita.titulo}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-text color="dark">
+        <p>{{tareita.texto}}</p>
+      </ion-text>
+        <p> {{tareita.duracion}}</p>
+      <br><br><br>
+
+      <p *ngIf="!tareita.realizado">Aun no has realizado tu Tareita </p>
+      <p *ngIf="tareita.realizado">Has completado tu tareita </p>
+      <ion-icon name="checkmark-circle" style="font-size: 50px;"*ngIf="tareita.realizado" color="secondary" (click)="cambiarTareaNoCompletada(tareita)"></ion-icon>
+
+      <ion-icon name="close" color="danger" style="font-size: 50px;" *ngIf="!tareita.realizado" (click)="cambiarTareaCompletada(tareita)"></ion-icon>
+      <p *ngIf="tareita.realizado">Borrar Tareita: </p><ion-icon name="trash" style="font-size: 50px;" *ngIf="tareita.realizado" (click) = "borrarTarea(tareita)"></ion-icon>
+
+    </ion-card-content>
+</ion-card>
+
+</ion-content>
